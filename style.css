@@ -144,9 +144,18 @@ h3 {
 
 /* components */
 .testimonial-grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-areas:
+    "one one two five"
+    "three four four five";
   padding-block: 2rem;
   width: min(95%, 70rem);
   margin-inline: auto;
+}
+
+.testimonial:nth-child(n) {
+  grid-area: attr(data-grid-area);
 }
 
 .testimonial {
@@ -154,6 +163,8 @@ h3 {
   padding: 2rem;
   border-radius: 0.5rem;
   box-shadow: 2.5rem 3.75rem 3rem -3rem hsl(var(--clr-secondary-400) / 0.25);
+  
+
 }
 
 .testimonial.quote {
